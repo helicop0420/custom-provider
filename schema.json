@@ -1,0 +1,84 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "Data Provider",
+    "icon": "Data",
+    "illegalChildren": ["section"],
+    "hasChildren": true,
+    "actions": ["RefreshDatasource"],
+    "size": {
+      "width": 400,
+      "height": 100
+    },
+    "settings": [
+      {
+        "type": "dataSource",
+        "label": "Data",
+        "key": "dataSource",
+        "required": true
+      },
+      {
+        "type": "filter",
+        "label": "Filtering",
+        "key": "filter"
+      },
+      {
+        "type": "field/sortable",
+        "label": "Sort column",
+        "key": "sortColumn",
+        "placeholder": "None"
+      },
+      {
+        "type": "select",
+        "label": "Sort order",
+        "key": "sortOrder",
+        "options": ["Ascending", "Descending"],
+        "defaultValue": "Ascending"
+      },
+      {
+        "type": "number",
+        "label": "Limit",
+        "key": "limit",
+        "defaultValue": 50
+      },
+      {
+        "type": "boolean",
+        "label": "Paginate",
+        "key": "paginate",
+        "defaultValue": true,
+        "info": "Pagination is only available for data stored in tables"
+      }
+    ],
+    "context": {
+      "type": "static",
+      "values": [
+        {
+          "label": "Rows",
+          "key": "rows",
+          "type": "array"
+        },
+        {
+          "label": "Extra Info",
+          "key": "info",
+          "type": "string"
+        },
+        {
+          "label": "Rows Length",
+          "key": "rowsLength",
+          "type": "number"
+        },
+        {
+          "label": "Schema",
+          "key": "schema",
+          "type": "object"
+        },
+        {
+          "label": "Page Number",
+          "key": "pageNumber",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}
